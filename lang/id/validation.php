@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'required' => ':attribute wajib diisi.',
+    'string' => ':attribute harus berupa teks.',
+    'email' => ':attribute harus berupa alamat email yang valid.',
+    'integer' => ':attribute harus berupa bilangan bulat.',
+    'array' => ':attribute harus berupa daftar.',
+    'date_format' => 'Format :attribute tidak valid.',
+    'after' => ':attribute harus setelah :date.',
+    'after_or_equal' => ':attribute harus pada atau setelah :date.',
+    'before_or_equal' => ':attribute harus pada atau sebelum :date.',
+    'exists' => ':attribute yang dipilih tidak tersedia.',
+    'unique' => ':attribute sudah digunakan.',
+    'distinct' => ':attribute tidak boleh duplikat.',
+    'in' => 'Pilihan :attribute tidak valid.',
+    'regex' => ':attribute hanya boleh berisi huruf kecil, angka, titik, garis bawah, dan tanda hubung.',
+    'confirmed' => 'Konfirmasi :attribute tidak sesuai.',
+    'prohibited' => ':attribute tidak boleh diubah pada tindakan ini.',
+    'min' => ['string' => ':attribute minimal :min karakter.', 'array' => ':attribute minimal :min pilihan.', 'numeric' => ':attribute minimal :min.'],
+    'max' => ['string' => ':attribute maksimal :max karakter.', 'array' => ':attribute maksimal :max pilihan.', 'numeric' => ':attribute maksimal :max.'],
+    'attributes' => ['title' => 'Judul', 'name' => 'Nama', 'username' => 'Username', 'password' => 'Password', 'participants' => 'Peserta',
+        'starts_at' => 'Waktu mulai', 'ends_at' => 'Waktu selesai', 'location' => 'Tempat/media', 'agenda_title' => 'Judul agenda',
+        'agenda_description' => 'Pembahasan agenda', 'role' => 'Peran', 'discussion' => 'Pembahasan', 'decisions' => 'Keputusan',
+        'deadline' => 'Deadline', 'task' => 'Tugas', 'user_id' => 'PIC', 'recorded_on' => 'Tanggal pencatatan', 'from' => 'Tanggal mulai', 'to' => 'Tanggal akhir'],
+];
