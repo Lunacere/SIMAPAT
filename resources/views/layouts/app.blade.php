@@ -24,7 +24,7 @@
 <div class="account"><span class="avatar">{{ mb_substr(auth()->user()->name, 0, 1) }}</span><div><strong>{{ auth()->user()->name }}</strong><small>{{ App\Models\User::ROLES[auth()->user()->role] }}</small></div></div>
 </div>
 </aside>
-<div class="workspace"><header class="topbar"><span>Ruang kerja <b>/ @yield('title', 'Dashboard')</b></span><div><span class="today">{{ now()->translatedFormat('d F Y') }}</span><a href="{{ route('reminders.index') }}">Notifikasi <span class="counter">{{ auth()->user()->unreadNotifications()->count() }}</span></a>
+<div class="workspace"><header class="topbar"><span class="breadcrumb"><span>Ruang kerja</span> <b>/ @yield('title', 'Dashboard')</b></span><div><button class="quicknav-trigger" type="button" data-open-quicknav aria-label="Buka halaman" aria-haspopup="dialog" aria-controls="quicknav-dialog" hidden><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg><span>Buka halaman</span><kbd aria-hidden="true">Ctrl K</kbd></button><span class="today">{{ now()->translatedFormat('d F Y') }}</span><a href="{{ route('reminders.index') }}">Notifikasi <span class="counter">{{ auth()->user()->unreadNotifications()->count() }}</span></a>
 <details class="account-menu"><summary aria-label="Menu akun"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg></summary><div class="account-popup">
 <div class="account-popup-heading"><strong>{{ auth()->user()->name }}</strong><small>{{ App\Models\User::ROLES[auth()->user()->role] }}</small></div>
 <a href="{{ route('profile.show') }}">Profil <span aria-hidden="true">↗</span></a>
@@ -36,7 +36,11 @@
 @include('layouts.validation-errors')
 @yield('content')
 </main><footer>SIMAPAT · Manajemen rapat dan tindak lanjut<span>Waktu ditampilkan dalam WIB</span></footer></div>
-</div></body></html>
+</div>
+@include('layouts.workspace-dialogs')
+</body></html>
+
+
 
 
 

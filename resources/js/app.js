@@ -1,4 +1,6 @@
 import './chat';
+import './workspace';
+import './form-interactions';
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
@@ -25,12 +27,7 @@ for (const details of document.querySelectorAll('.account-menu, .filter-options,
     });
 }
 
-document.addEventListener('submit', (event) => {
-    const message = event.target.dataset.confirm;
-    if (message && !window.confirm(message)) {
-        event.preventDefault();
-    }
-});
+
 
 const accountMenu = document.querySelector('.account-menu');
 
@@ -41,7 +38,7 @@ if (accountMenu) {
         }
     });
     document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape' && accountMenu.open) {
+        if (event.key === 'Escape' && accountMenu.open && !document.querySelector('dialog[open]')) {
             accountMenu.open = false;
             accountMenu.querySelector('summary').focus();
         }
@@ -70,7 +67,7 @@ if (menuToggle && sidebarMenu) {
     menuToggle.addEventListener('click', () => setMenuOpen(sidebarMenu.hidden));
     mobile.addEventListener('change', () => setMenuOpen(false));
     document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape' && mobile.matches && !sidebarMenu.hidden) {
+        if (event.key === 'Escape' && mobile.matches && !sidebarMenu.hidden && !document.querySelector('dialog[open]')) {
             setMenuOpen(false);
             menuToggle.focus();
         }
@@ -162,4 +159,6 @@ if (validationSummary) {
     }
     requestAnimationFrame(() => validationSummary.focus());
 }
+
+
 
